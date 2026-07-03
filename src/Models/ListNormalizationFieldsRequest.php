@@ -31,6 +31,16 @@ class ListNormalizationFieldsRequest extends Model
     /**
      * @var string
      */
+    public $normalizationFieldSource;
+
+    /**
+     * @var string
+     */
+    public $normalizationSchemaType;
+
+    /**
+     * @var string
+     */
     public $regionId;
 
     /**
@@ -42,6 +52,8 @@ class ListNormalizationFieldsRequest extends Model
         'maxResults' => 'MaxResults',
         'name' => 'Name',
         'nextToken' => 'NextToken',
+        'normalizationFieldSource' => 'NormalizationFieldSource',
+        'normalizationSchemaType' => 'NormalizationSchemaType',
         'regionId' => 'RegionId',
         'roleFor' => 'RoleFor',
     ];
@@ -68,6 +80,14 @@ class ListNormalizationFieldsRequest extends Model
 
         if (null !== $this->nextToken) {
             $res['NextToken'] = $this->nextToken;
+        }
+
+        if (null !== $this->normalizationFieldSource) {
+            $res['NormalizationFieldSource'] = $this->normalizationFieldSource;
+        }
+
+        if (null !== $this->normalizationSchemaType) {
+            $res['NormalizationSchemaType'] = $this->normalizationSchemaType;
         }
 
         if (null !== $this->regionId) {
@@ -103,6 +123,14 @@ class ListNormalizationFieldsRequest extends Model
 
         if (isset($map['NextToken'])) {
             $model->nextToken = $map['NextToken'];
+        }
+
+        if (isset($map['NormalizationFieldSource'])) {
+            $model->normalizationFieldSource = $map['NormalizationFieldSource'];
+        }
+
+        if (isset($map['NormalizationSchemaType'])) {
+            $model->normalizationSchemaType = $map['NormalizationSchemaType'];
         }
 
         if (isset($map['RegionId'])) {

@@ -21,6 +21,11 @@ class GetNormalizationRuleRequest extends Model
     /**
      * @var string
      */
+    public $normalizationSecurityDomainId;
+
+    /**
+     * @var string
+     */
     public $regionId;
 
     /**
@@ -30,6 +35,7 @@ class GetNormalizationRuleRequest extends Model
     protected $_name = [
         'lang' => 'Lang',
         'normalizationRuleId' => 'NormalizationRuleId',
+        'normalizationSecurityDomainId' => 'NormalizationSecurityDomainId',
         'regionId' => 'RegionId',
         'roleFor' => 'RoleFor',
     ];
@@ -48,6 +54,10 @@ class GetNormalizationRuleRequest extends Model
 
         if (null !== $this->normalizationRuleId) {
             $res['NormalizationRuleId'] = $this->normalizationRuleId;
+        }
+
+        if (null !== $this->normalizationSecurityDomainId) {
+            $res['NormalizationSecurityDomainId'] = $this->normalizationSecurityDomainId;
         }
 
         if (null !== $this->regionId) {
@@ -75,6 +85,10 @@ class GetNormalizationRuleRequest extends Model
 
         if (isset($map['NormalizationRuleId'])) {
             $model->normalizationRuleId = $map['NormalizationRuleId'];
+        }
+
+        if (isset($map['NormalizationSecurityDomainId'])) {
+            $model->normalizationSecurityDomainId = $map['NormalizationSecurityDomainId'];
         }
 
         if (isset($map['RegionId'])) {
